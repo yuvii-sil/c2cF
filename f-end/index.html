@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LDCE AI Assistant | Smart Campus Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Decorative Shapes -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="LDCE_Logo.png" alt="Logo" />
+                </div>
+                <div class="header-text">
+                    <h1>LDCE AI Assistant</h1>
+                    <p>Your intelligent campus companion for instant information and support</p>
+                </div>
+            </div>
+            
+            <div class="theme-toggle">
+                <input type="checkbox" id="themeToggle">
+                <label class="toggle-slider" for="themeToggle"></label>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Chat Interface -->
+            <section class="chat-container glass-card">
+                <div class="chat-header">
+                    <i class="fas fa-robot"></i>
+                    <h2>Campus Virtual Assistant</h2>
+                    <div class="chat-status">
+                        <div class="status-indicator"></div>
+                        <span>Online • 24/7 Available</span>
+                    </div>
+                </div>
+                
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Initial greeting -->
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            Hello! 👋 I'm your LDCE AI Assistant, powered by advanced NLP and RAG technology. I can help you find information about admissions, courses, departments, events, notices, placements, and campus services. What would you like to know?
+                        </div>
+                        <div class="message-time">
+                            <i class="far fa-clock"></i> <span id="currentTime">12:32 PM</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chat Input Area -->
+                <div class="chat-input-container">
+                    <div class="chat-input-wrapper">
+                        <input type="text" class="chat-input" id="userInput" placeholder="Ask about admissions, courses, events, placements...">
+                        <div class="input-icons">
+                            <button class="input-icon" id="attachButton" title="Attach file">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <input type="file" id="fileInput" style="display: none;" accept=".pdf,.doc,.docx,.txt,.jpg,.png">
+                            <button class="input-icon" id="emojiButton" title="Insert emoji">
+                                <i class="far fa-smile"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="send-button" id="sendButton">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Information Side Panel -->
+            <aside class="info-panel">
+                <!-- Quick Questions Section -->
+                <div class="panel-section">
+                    <h3><i class="fas fa-bolt"></i> Quick Questions</h3>
+                    <div class="quick-questions">
+                        <div class="quick-question" data-question="What are the admission requirements for Computer Engineering?">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Admission Requirements</span>
+                        </div>
+                        <div class="quick-question" data-question="When is the next campus event?">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Upcoming Events</span>
+                        </div>
+                        <div class="quick-question" data-question="What departments are available at LDCE?">
+                            <i class="fas fa-building"></i>
+                            <span>Departments</span>
+                        </div>
+                        <div class="quick-question" data-question="How can I contact the placement cell?">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Placement Information</span>
+                        </div>
+                        <div class="quick-question" data-question="What are the library timings?">
+                            <i class="fas fa-book"></i>
+                            <span>Student Services</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Statistics Section -->
+                <div class="panel-section">
+                    <h3><i class="fas fa-chart-line"></i> Assistant Statistics</h3>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="questionsCount">0</div>
+                            <div class="stat-label">Questions Answered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="responseTime">1.8s</div>
+                            <div class="stat-label">Avg. Response Time</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="accuracyRate">94%</div>
+                            <div class="stat-label">Accuracy Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="userSatisfaction">4.8</div>
+                            <div class="stat-label">User Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Features Section -->
+                <div class="panel-section">
+                    <h3><i class="fas fa-star"></i> Key Features</h3>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> 24/7 Availability & Instant Responses</li>
+                        <li><i class="fas fa-check-circle"></i> Multi-language Support (English, Gujarati, Hindi)</li>
+                        <li><i class="fas fa-check-circle"></i> RAG-Powered Accurate Information</li>
+                        <li><i class="fas fa-check-circle"></i> Seamless Website Integration</li>
+                        <li><i class="fas fa-check-circle"></i> Admin Dashboard for Updates</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <p>LDCE AI Assistant | Computer Engineering Department - Track 2</p>
+            <p><a href="https://www.ldce.ac.in" target="_blank">www.ldce.ac.in</a> | Project Timestamp: 9/12/2025, 12:31:54 PM</p>
+            
+            <div class="contact-info">
+                <p><strong>Faculty Contacts:</strong></p>
+                <p><a href="mailto:maitrikshah@ldce.ac.in">Dr. Maitrik Shah</a> • <a href="mailto:pragneshpatel@ldce.ac.in">Prof. Pragnesh Patel</a></p>
+            </div>
+            
+            <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.8;">
+                Powered by Paramshavak DL GPU • RAG Architecture • Open Source Frameworks
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
