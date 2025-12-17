@@ -364,14 +364,6 @@ fileInput.addEventListener('change', function(e) {
     }
 });
 
-// Emoji button
-emojiButton.addEventListener('click', function() {
-    // Simple emoji picker simulation
-    const emojis = ['😊', '👍', '🎓', '🏫', '📚', '💻', '⭐', '🚀'];
-    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-    userInput.value += randomEmoji;
-    userInput.focus();
-    
     // Button feedback
     this.style.transform = 'scale(0.9)';
     setTimeout(() => {
